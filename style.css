@@ -29,15 +29,22 @@
     grid-row-end: 3;
     background-color: var(--blue-color);
     color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr,1fr;
+
   }
 
   header > h1{
+    grid-row-start: 1;
+    grid-row-end: 2;
     font-size: 15px;
-    text-transform: uppercase;
-    margin-bottom: 120px;
+    text-transform: uppercase
   }
 
   header > p{
+    grid-row-start: 2;
+    grid-row-end: 3;
     font-size: 10px;
     text-align:justify
   }
@@ -53,6 +60,12 @@
     font-size: 15px;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  section{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   footer{
@@ -71,7 +84,7 @@
   }
 
   footer > button{
-    size: 10px;
+    
     margin-top: 5px;
     border-radius: 10px;
     padding: 10px 15px;
@@ -82,8 +95,8 @@
   
   .school {
     background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/d8ce469044b958508f4bdbab/blueschoolbackpackwithessentialsupplies_232148207678.jpg);
+    
   }
-  
   .student {
     background-image: url(https://images03.nicepage.com/c461c07a441a5d220e8feb1a/9e4ce16148dd5cbeb1065410/89f80abe-6acd-d8dc-a341-3e571206975b.jpg);
   }
@@ -101,4 +114,28 @@
   .student,
   .time {
     background-size: cover;
+  }
+
+  @media screen and (max-width: 460px){
+    body{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 1fr);
+    }
+    header {
+      grid-row-start: 1;
+      grid-row-end: 3;
+      background-color: var(--blue-color);
+      color: var(--primary-color);
+    }
+    footer{
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 7;
+      grid-row-end: 8;
+      background-color: var(--orange-color);
+      color: var(--primary-color);
+    }
+    section{
+      height: 200px;
+    }
   }
